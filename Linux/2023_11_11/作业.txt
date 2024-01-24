@@ -1,0 +1,29 @@
+linux作业：
+1、恢复快照，根据笔记重新安装一次mysql数据库，要求截图+文字说明。（加深印象）
+
+
+2、linux中，如何查看一个rpm包是否已经安装？如何查看一个文件属于哪个软件？
+rpm -qa|grep 软件名字				rpm -qf 文件名
+
+
+3、tomcat启动后，如何用命令查看它目前占用哪个端口？
+第一步，ps -ef(-aux也行)|grep tomcat(也可以用pid查进程名）
+查看运行的Tomcat 服务，获取 PID
+二，netstat -anp|grep pid
+查对应端口
+三，lsof -i :端口号
+查端口号对应的进程名
+
+4、easybuy 部署的步骤进行图文描述
+
+
+5、yum安装软件切换本地yum源 安装 httpd 的步骤
+6、yum安装软件切换 163 源的步骤
+7、安装 nginx 步骤截图，进行编写操作文档
+8、在nginx中配置 端口映射及 负载均衡的步骤
+9、编写shell脚本，完成自动部署jdk + tomcat的脚本
+10、编写shell脚本，完成输入两个数，求它们之和是多少？
+
+
+rpm -ivh ...  --force --nodeps
+service firewalld stop

@@ -1,0 +1,18 @@
+tar -cvf a.tar a.txt
+tar -xvf a.tar
+
+tar -zcvf a.tar.gz a.txt
+tar -zxvf a.tar.gz
+
+zip c.zip c.txt
+unzip c.zip
+
+gzip a.txt
+gzip -d a.gz
+
+第一步，ps -ef(-aux也行)|grep tomcat(也可以用pid查进程名）
+查看运行的Tomcat 服务，获取 PID
+二，netstat -anp|grep pid
+查对应端口
+三，lsof -i :端口号
+查端口号对应的进程名

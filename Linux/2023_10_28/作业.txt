@@ -1,0 +1,65 @@
+linux作业：
+创建两个用户 cc dd，分别属于 A 组 和B组 并设置密码为123456
+groupadd A
+groupadd B
+username cc -p A
+username dd -p B
+passwd cc
+passwd dd
+
+用 cc在/tmp目录下创建一个文件 c.txt ,然后用root账号 修改文件的所有者为 dd ，属于B组
+chown dd【:组名】 c.txt
+
+用 dd在/tmp目录下创建一个文件 d.txt，然后用root账号 修改文件的权限为 rw-r--r-x，用两种方式进行修改
+chmod 645 d.txt
+chmod o+x d.txt
+
+
+用root账号登录，把 c.txt,d.txt 压缩成 test.tar 文件，然后进行解压操作
+tar -cvf test.tar c.txt d.txt
+tar -xvf test.tar
+
+
+用root账号登录，把 c.txt压缩成 c.txt.gz 文件，然后进行解压操作
+gzip c.txt
+gizp -d c.txt.gz
+
+
+用root账号登录，把 c.txt,d.txt 压缩成 pp.tar.gz 文件，然后进行解压操作
+tar -zcvf pp.tar.gz c.txt d.txt
+tar -zxvf pp.tar.gz
+
+用root账号登录，把 c.txt,d.txt 压缩成 自己的英文简写.zip 文件，然后进行解压操作
+zip zeh.zip c.txt d.txt
+unzip zeh.zip
+
+
+还原虚拟机，把jdk+tomcat的操作重新做一遍加强 ，要求图文写成文档
+见word
+
+tomcat 中 bin/conf/webapps目录的含义是什么？
+bin可执行文件
+conf设置文件
+webapps 装class类的容器，装了才能在tomcat上跑
+
+
+如何查看tomcat流水日志
+opt下的tomcat里面有logs目录，用tail -f 打开里面的catalina.out
+
+
+linux查看文件中内容有哪些方式？
+cat
+more
+head -n
+tail -n
+
+使用find命令 查找 /opt 目录下有没有testaaa文件夹
+find /opt -type d -name testaaa
+
+
+tomcat启动后，如何用命令查看它目前占用哪个端口？
+如何查杀tomcat进程
+ps -aux|grep tomcat
+netstat -anp|grep PID
+lsof -i :8080
+kill -9 PID
